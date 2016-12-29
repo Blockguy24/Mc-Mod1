@@ -1,3 +1,7 @@
 
 # Creative Tabs
 itemGroup.mcmod1tab=Blockguy's Tab!
+
+
+#Items
+item.mc_mod_item1.name=McModItem1

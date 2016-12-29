@@ -1,6 +1,7 @@
 package com.blockguy.mc_mod1;
 
 
+import com.blockguy.mc_mod1.item.ModItems;
 import com.blockguy.mc_mod1.tabs.CreativeTab1;
 import net.minecraft.creativetab.CreativeTabs;
 import net.minecraftforge.fml.common.Mod;
@@ -31,6 +32,7 @@ public class McMod1
     public void preinit(FMLPreInitializationEvent event)
     {
         tabs = new CreativeTab1(CreativeTabs.getNextID(), "mcmod1tab");
+        ModItems.preInit();
         proxy.preInit(event);
     }
 

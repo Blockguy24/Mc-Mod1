@@ -1,0 +1,6 @@
+{
+  "parent": "item/generated",
+  "textures": {
+    "layer0": "mcmod1:items/mc_mod_item1"
+  }
+}
