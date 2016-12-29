@@ -1,2 +1,2 @@
 # Mc-Mod1
-First Minecraft Mod
+My First Minecraft Mod
