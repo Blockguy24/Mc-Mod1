@@ -5,6 +5,7 @@ import net.minecraft.client.Minecraft;
 import net.minecraft.client.renderer.block.model.ModelResourceLocation;
 import net.minecraft.item.Item;
 import net.minecraft.util.ResourceLocation;
+import net.minecraftforge.common.util.EnumHelper;
 import net.minecraftforge.fml.common.registry.GameRegistry;
 
 public class ModItems {
@@ -12,7 +13,7 @@ public class ModItems {
 
     public static void preInit(){
 
-        McModItem = new ItemMcModItem1("mc_mod_item1");
+        McModItem = new ItemMcModItem1(EnumHelper.addToolMaterial("lol", 3, 20, 200.0F, 1000.0F, 1000), "mc_mod_item1");
 
         registerItems();
     }
@@ -28,5 +29,6 @@ public class ModItems {
     public static void registerRender(Item item){
         Minecraft.getMinecraft().getRenderItem().getItemModelMesher().register(item, 0, new ModelResourceLocation(McMod1.MODID + ":" + item.getUnlocalizedName().substring(5), "inventory"));
     }
+
 
 }

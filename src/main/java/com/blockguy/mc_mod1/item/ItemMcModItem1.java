@@ -4,8 +4,8 @@ import com.blockguy.mc_mod1.McMod1;
 import net.minecraft.entity.player.EntityPlayer;
 import net.minecraft.init.Blocks;
 import net.minecraft.item.EnumRarity;
-import net.minecraft.item.Item;
 import net.minecraft.item.ItemStack;
+import net.minecraft.item.ItemSword;
 import net.minecraft.util.ActionResult;
 import net.minecraft.util.EnumActionResult;
 import net.minecraft.util.EnumFacing;
@@ -16,15 +16,19 @@ import net.minecraft.world.World;
 
 import java.util.List;
 
-public class ItemMcModItem1 extends Item {
-    public ItemMcModItem1(String name) {
+public class ItemMcModItem1 extends ItemSword {
+    public ItemMcModItem1(ToolMaterial material, String name) {
+        super(material);
         setUnlocalizedName(name);
         setCreativeTab(McMod1.tabs);
     }
 
     @Override
     public ActionResult<ItemStack> onItemRightClick(ItemStack itemStackIn, World world, EntityPlayer player, EnumHand hand) {
-        player.addChatComponentMessage(new TextComponentString("Activated!"));
+        if(!world.isRemote){
+            player.addChatComponentMessage(new TextComponentString("Activated!"));
+        }
+
         return super.onItemRightClick(itemStackIn, world, player, hand);
     }
 
@@ -57,6 +61,5 @@ public class ItemMcModItem1 extends Item {
     public boolean hasEffect(ItemStack stack) {
         return true;
     }
-
 
 }
